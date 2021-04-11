@@ -49,7 +49,7 @@ weren't available yet, so I used [Schallers](https://schaller.info/en/m6-series/
 
 ### Finish
 
-For finish, as this was my first guitar and I had no experience with wood finishing aside from tung and linseed oils from highschool wood shop, I chose a widely recommended "easy" finish,
+For finish, as this was my first guitar and I had no experience with wood finishing aside from tung and linseed oils from highschool wood shop, I chose a widely recommended "easy" finish, 
 [Tru-Oil](https://www.birchwoodcasey.com/products/tru-oil-stock-finish-8-fl-oz-liquid.html) which is indeed very forgiving. I didn't do any pore filling, which isn't really needed on bubinga
 or purpleheart but is often done with the very open-pored wenge - as this wasn't a high gloss, I think it turned out pretty good.
 
