@@ -1,0 +1,3 @@
+{% set dir = page.relative_path | trim_end_matches(pat="/index.md") %}
+{% set imgpath = dir ~ "/" ~ path %}
+<img src="{{ resize_image(path=imgpath, width=width, op="fit_width") }}" />

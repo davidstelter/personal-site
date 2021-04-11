@@ -1,0 +1,45 @@
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="{{ config.base_url }}">
+          {{ config.title }}
+        </a>
+      </h1>
+      <p class="lead">{{ config.description }}</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item{% if current_path == config.base_url %} active{% endif %}" href="{{ config.base_url }}">Home</a>
+
+      {#
+        The code below dynamically generates a sidebar nav of pages with
+        `layout: page` in the front-matter. See readme for usage.
+       #}
+
+       {% if section.pages %}
+        {% for node in section.pages %}
+          {% if node.title %}
+            <a class="sidebar-nav-item{% if current_path == node.path %} active{% endif %}" href="{{ node.path }}">{{ node.title }}</a>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+
+      {% if page.toc %}
+        {% for node in page.toc %}
+          {% if node.title %}
+            <a class="sidebar-nav-item{% if current_path == node.permalink %} active{% endif %}" href="{{ node.permalink }}">{{ node.title }}</a>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+
+      {#
+      <a class="sidebar-nav-item" href="{{ site.github.repo }}/archive/v{{ site.version }}.zip">Download</a>
+      <a class="sidebar-nav-item" href="{{ site.github.repo }}">GitHub project</a>
+      <span class="sidebar-nav-item">Currently v{{ site.version }}</span>
+      #}
+    </nav>
+
+    {# <p>&copy; {{ site.time | date(format="%Y-%m-%d %H:%M") }}. All rights reserved.</p> #}
+  </div>
+</div>
