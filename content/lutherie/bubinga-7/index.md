@@ -1,14 +1,14 @@
 +++
-title = "Bubinga 7"
+title = "Bubinga 7 string guitar"
 +++
 
-This was the first guitar I made, and the first guitar I owned. I only had basses until this.
+This was the first guitar I made. I was still learning all the basics, and had barely done any joinery with glue, just some boxes in highschool shop class.
+In fact the first fingerboard I tried to glue to the neck popped right off - can't remember exactly what I did wrong with that, might have been over-clamped
+with expoxy.
 
 {{ img_fit_width(path="bubinga-7-body-perspective.jpg", width=800) }}
 
-## Materials
-
-### Neck
+## Neck
 
 The neck is a 7-piece lamination with a center of {{wood_link(name="purpleheart")}} with narrow-ish strips of {{wood_link(name="wenge")}}
 and {{wood_link(name="bubinga")}} with wenge again for the outermost layers. The fingerboard is {{wood_link(name="ebony")}} though I forget
@@ -17,7 +17,7 @@ and there are two carbon fiber stiffeners as well.
 
 {{ img_fit_width(path="bubinga-7-body-rear.jpg", width=800) }}
 
-### Body
+## Body
 
 The body is made of two wings of {{wood_link(name="bubinga")}} with narrower strips of {{wood_link(name="purpleheart")}}
 between the body wings and the neck-through laminations. It's a bit unusual to see a guitar with lenghtwise laminations like this in the body, but I was reading
@@ -26,7 +26,7 @@ So the purpleheart widens the neck beam enough to fully contain the routs for th
 
 {{ img_fit_width(path="bubinga-7-full-front.jpg", width=800) }}
 
-### Pickups & Electronics
+## Pickups & Electronics
 
 Pickup selection and position is pretty standard for a hard rock/metal guitar, 2 humbuckers in the usual places. When I made this, starting around 2006 or so, 7 string humbuckers were 
 still much less common than they are now, but [EMG](https://www.emgpickups.com/) had some available - exactly 3 varieties if I remember right.
@@ -35,7 +35,7 @@ Electronics are the usual volume, tone and 3-position pickup selector switch.
 
 {{ img_fit_width(path="bubinga-7-body-front.jpg", width=800) }}
 
-### Hardware
+## Hardware
 
 The bridge is a [Hipshot Contour Tremolo](https://hipshotproducts.com/collections/guitar-bridges/products/7-string-us-contour-tremolo-bridge-right-handed?variant=28320389256) which is
 a simple design with a few subtle-but-nice features, like using hardened steel for the load-bearing edges of the interface between the bridge plate and the posts, and having a pleasing
@@ -47,13 +47,13 @@ weren't available yet, so I used [Schallers](https://schaller.info/en/m6-series/
 
 {{ img_fit_width(path="bubinga-7-headstock-rear.jpg", width=800) }}
 
-### Finish
+## Finish
 
 For finish, as this was my first guitar and I had no experience with wood finishing aside from tung and linseed oils from highschool wood shop, I chose a widely recommended "easy" finish, 
 [Tru-Oil](https://www.birchwoodcasey.com/products/tru-oil-stock-finish-8-fl-oz-liquid.html) which is indeed very forgiving. I didn't do any pore filling, which isn't really needed on bubinga
 or purpleheart but is often done with the very open-pored wenge - as this wasn't a high gloss, I think it turned out pretty good.
 
-### Issues
+## Issues
 
 The only real problem with this guitar was the high-fret access. The gap between the lower horn and the neck is pretty cramped. When I made it, I honestly didn't think I'd be reaching up there
 very much and I didn't care. Years later, trying to learn some solos and generally being less scared by the high-numbered frets, I ended up truncating the lower horn so my hand could fit up there.

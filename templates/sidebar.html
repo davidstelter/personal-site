@@ -1,5 +1,5 @@
 <div class="sidebar">
-  <div class="container sidebar-sticky">
+  <div class="container">
     <div class="sidebar-about">
       <h1>
         <a href="{{ config.base_url }}">
@@ -9,7 +9,36 @@
       <p class="lead">{{ config.description }}</p>
     </div>
 
-    <nav class="sidebar-nav">
+  <nav class="sidebar-nav">
+
+  {% if page.ancestors %}
+    {% set last_ancestor = page.ancestors | last %}
+    {% set ancestor_section = get_section(path=last_ancestor, metadata_only=false) %}
+    <h3><a class="sidebar-nav-item active" href="{{ancestor_section.path}}">{{ ancestor_section.title }}</a></h3>
+     {% if ancestor_section.pages %}
+
+      {% for node in ancestor_section.pages %}
+        {% if current_path == node.path %}
+          {% if node.toc %}
+          <nav class="sidebar-current-section">
+            <a class="sidebar-nav-item{% if current_path == node.path %} active{% endif %}" href="{{ node.path }}">{{ node.title }}</a>
+            {% for toc_node in node.toc %}
+              {% if toc_node %}
+                <a class="sidebar-subsection sidebar-nav-item{% if current_path == toc_node.permalink %} active{% endif %}" href="{{ toc_node.permalink }}">{{ toc_node.title }}</a>
+              {% endif %}
+            {% endfor %}
+            </nav>
+          {% endif %}
+        {% else %}
+          {% if node.title %}
+            <a class="sidebar-nav-item{% if current_path == node.path %} active{% endif %}" href="{{ node.path }}">{{ node.title }}</a>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+
+    {% endif %}
+  {% else %}
+
       <a class="sidebar-nav-item{% if current_path == config.base_url %} active{% endif %}" href="{{ config.base_url }}">Home</a>
 
       {#
@@ -26,6 +55,7 @@
       {% endif %}
 
       {% if page.toc %}
+        <h3>{{ page.title }}</h3>
         {% for node in page.toc %}
           {% if node.title %}
             <a class="sidebar-nav-item{% if current_path == node.permalink %} active{% endif %}" href="{{ node.permalink }}">{{ node.title }}</a>
@@ -39,7 +69,8 @@
       <span class="sidebar-nav-item">Currently v{{ site.version }}</span>
       #}
     </nav>
+  {% endif %}
 
-    {# <p>&copy; {{ site.time | date(format="%Y-%m-%d %H:%M") }}. All rights reserved.</p> #}
+  <p class="sidebar-copyright">&copy; {{config.extra.copyright}}. All rights reserved.</p>
   </div>
 </div>

@@ -20,4 +20,5 @@ highlight_code = true
 
 [extra]
 # Put all your custom variables here
-
+template_debug = false
+copyright = "David Stelter 2021"

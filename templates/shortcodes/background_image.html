@@ -1,0 +1,26 @@
+{% if page.relative_path %}
+{% set dir = page.relative_path | trim_end_matches(pat="/index.md") %}
+  {% if config.extra.template_debug %}
+    <pre><code>
+    page.relative_path:{{page.relative_path}}
+    dir:{{dir}} 
+    </code></pre>
+  {% endif %}
+{% endif %}
+
+{% if section.relative_path %}
+{% set dir = section.relative_path | trim_end_matches(pat="/_index.md") %}
+  {% if config.extra.template_debug %}
+    <pre><code>
+    section.relative_path:{{section.relative_path}}
+    dir:{{dir}} 
+    </code></pre>
+  {% endif %}
+{% endif %}
+
+{% if config.extra.template_debug %}
+{% endif %}
+
+{% set imgpath = dir ~ "/" ~ path %}
+
+<img class="background" src="{{path}}" {% if alt %}alt="{{alt}}"{%endif%}/>

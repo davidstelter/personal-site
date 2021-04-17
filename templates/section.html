@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+{% if config.extra.template_debug %}
+<pre><code>
+section.html section.relative_path: {{ section.relative_path }}
+{{ section }}
+</pre></code>
+{% endif %}
+
+    <h1 class="title">{{ section.title }}</h1>
+
+    {% if section.description %}
+    <h2 class="description">{{ section.description }}</h2>
+    {% endif %}
+
+    {{ section.content | safe }}
+{% endblock content %}
+
+
+{# borrowed from https://github.com/getzola/book/blob/master/templates/section.html #}

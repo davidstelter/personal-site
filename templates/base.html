@@ -6,6 +6,17 @@
   <title>MyBlog</title>
   <link rel="stylesheet" href="/style.css">
   <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"> -->
+  {% if background_image %}
+  {% endif %}
+  <style>
+/*
+div#primary-content {
+  background: url('/lutherie/neck-glue-up.jpg') center/cover;
+    -webkit-mask:radial-gradient(circle at 50% 50%, #222 40%, transparent);
+          mask:radial-gradient(circle at 50% 50%, #222 40%, transparent);
+}
+  */
+  </style>
 </head>
 
 <body>
@@ -13,7 +24,7 @@
   {% include "sidebar.html" %}
 
   <section class="section">
-    <div class="container content">
+    <div id="primary-content" class="container content">
       {% block content %} {% endblock %}
     </div>
   </section>
