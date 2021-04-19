@@ -1,9 +1,22 @@
 {% extends "base.html" %}
 
 {% block content %}
-{% include "background-images.html" %}
+<style>
+div.sidebar::after {
+  content: "";
+  background-image: url('mask-bw.jpg');
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.5;
+  z-index: -1;
+}
+</style>
 <h1 class="title">
-  Personal site of David Stelter.
+  Personal site of David Stelter
 </h1>
 
 <p>

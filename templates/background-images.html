@@ -1,0 +1,34 @@
+
+{% if background_image %}
+<style>
+article.page-content::after {
+  content: "";
+  background-image: url('{{background_image}}');
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.5;
+  z-index: -1;
+}
+</style>
+{% endif %}
+
+{% if sidebar_background_image %}
+<style>
+div.sidebar::after {
+  content: "";
+  background-image: url('{{sidebar_background_image}}');
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.5;
+  z-index: -1;
+}
+</style>
+{% endif %}
