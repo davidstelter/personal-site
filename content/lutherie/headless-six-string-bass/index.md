@@ -1,5 +1,5 @@
 +++
-title = "Headless Six String Bass"
+title = "Headless 6 String Bass"
 +++
 
 ## Design

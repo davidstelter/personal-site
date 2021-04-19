@@ -1,16 +1,20 @@
 +++
 title = "Dactyl Manuform"
 description = "My homemade Dactyl Manuform - a daily typer that inspires befuddlement"
-date = 2021-04-07
+weight = 0
 
 [taxonomies]
 tags = ["keyboards", "3dPrinting", "microcontrollers", "qmk"] 
 +++
 
+{{img_fit_width(path="dactyl-lit.jpg", width=800)}}
+
 This board is a mashup of the Dactyl and the Manuform, and there are loads of variants of it on github. Like the original, all the ones I've seen are tweakable for layout/number of keys,
 curve/contour radii, shell height etc.
 
 It's a great project (if you like point-to-point wiring) and has become my daily typer - it feels pretty natural now that I've settled on a keymap.
+
+{{img_fit_width(path="dactyl-mcu-wiring2.jpg", width=800)}}
 
 
 ## Thumb Cluster
@@ -28,6 +32,8 @@ which are a light tactile switch from a set designed to resemble the feel of a T
 
 Keycap sets for Ergodox layouts (often just called "ergo") are a good fit for this board, depending on the particulars of the chosen layout. I went with a layout nearly identical to the Ergodox,
 with the notable change that the two innermost columns are all 1u keys, where the Ergodox uses two 1.5u keys.
+
+{{img_fit_width(path="dactyl-unlit.jpg", width=800)}}
 
 Currently I have [Matt3o /dev/tty MT3](https://drop.com/buy/drop-matt3o-devtty-custom-keycap-set) caps installed, which are a good profile for this board and have a very nice surface feel. 
 

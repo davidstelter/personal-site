@@ -1,7 +1,39 @@
 {% extends "base.html" %}
 
-
 {% block content %}
+{% if section.extra.background_image %}
+<style>
+article.section-content::after {
+  content: "";
+  background-image: url('{{section.extra.background_image}}');
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.3;
+  z-index: -1;
+}
+</style>
+{% endif %}
+
+{% if section.extra.sidebar_background_image %}
+<style>
+div.sidebar::after {
+  content: "";
+  background-image: url('{{section.extra.sidebar_background_image}}');
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.5;
+  z-index: -1;
+}
+</style>
+{% endif %}
 
 {% if config.extra.template_debug %}
 <pre><code>
@@ -10,6 +42,7 @@ section.html section.relative_path: {{ section.relative_path }}
 </pre></code>
 {% endif %}
 
+  <article class="section-content">
     <h1 class="title">{{ section.title }}</h1>
 
     {% if section.description %}
@@ -17,6 +50,7 @@ section.html section.relative_path: {{ section.relative_path }}
     {% endif %}
 
     {{ section.content | safe }}
+  </article>
 {% endblock content %}
 
 

@@ -1,10 +1,27 @@
 {% extends "base.html" %}
 
-<!-- index.html {{ page.relative_path }} -->
-
 {% block content %}
+{% include "background-images.html" %}
 <h1 class="title">
-  This is my blog made with Zola.
+  Personal site of David Stelter.
 </h1>
+
+<p>
+I'm a software engineer living in Portland, OR. When I'm not programming, I'm building things or playing with my cats.
+</p>
+
+{% if section.subsections %}
+<nav>
+  <ul>
+  {% for subsection in section.subsections %}
+    {% set section = get_section(path=subsection) %}
+    <li>
+      <a href="{{ section.path }}">{{ section.title }}</a>
+    </li>
+  {% endfor %}
+  </ul>
+</nav>
+{% endif %}
+
 <p>Click <a href="/blog/">here</a> to see my posts.</p>
 {% endblock content %}

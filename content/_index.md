@@ -2,6 +2,6 @@
 title = "Main index"
 sort_by = "date"
 template = "index.html"
-page_template = "blog-page.html"
 paginate_by = 5
+sidebar_background_image = "mask-bw.jpg"
 +++
