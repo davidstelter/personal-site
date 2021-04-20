@@ -30,7 +30,6 @@ S3 does not send `Vary: Origin` even when CORS is enabled on the bucket, which i
 to always treat differences in the `Origin` header as cache-invalidating, i.e. part of the effective cache key.
 
 ### request/response flows
-
 {% mermaid() %}
 sequenceDiagram
 participant P as Publisher
@@ -64,8 +63,7 @@ First up, a CORS-enabled client asks for the resource with an Origin header and 
 Then a non-CORS-enabled client asks for the same resource without an Origin header, and this is a cache hit in CloudFront, so the same response
 which includes CORS headers is sent to the second client. It doesn't care about these headers and just ignores them, this causes no problems
 for either client, and everything is fine.
-
-{% mermaid() %}
+{%- mermaid() -%}
 sequenceDiagram
 participant P as Publisher
 participant S3
@@ -97,7 +95,7 @@ loop Check Cache
 end
 CF-->>C2: RESP Object (w/CORS)
 Note right of C2: Happy client, ignores<br/>CORS headers.
-{% end %}
+{%- end -%}
 
 But if the order of requests is changed and the non-CORS request occurs first, things are very different. In this case, the non-CORS client still
 has everything it needs, but the client expecting CORS doesn't get back the headers it needs and the user agent will refuse to load the content.
@@ -162,8 +160,8 @@ The relevant configuration is in the CloudFront Behaviors section, under "Cache 
 OBJECT_URL='https://example.com/6NWUzMjlmYjFkNzZkZmI2ODM1YzEwZWU5/data.json?Expires=1582239185&Signature=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&Key-Pair-Id=APKAIXXXXXXXXXXXXXXX'
 
 # First, make request without Origin header.
-# If this is the FIRST request to hit CloudFront after most-recent write to the corresponding
-# S3 object, there will be no CORS headers returned
+# If this is the FIRST request to hit CloudFront after most-recent write to the
+# corresponding S3 object, there will be no CORS headers returned
 curl -o /dev/null -D - \
 	-H 'accept: application/json, text/plain, */*' \
 	"$OBJECT_URL" --compressed
@@ -178,9 +176,10 @@ accept-ranges: bytes
 server: AmazonS3
 x-cache: RefreshHit from cloudfront
 
-# subsequent request with Origin header will have same CORS response headers
-# if prev. request without Origin header was first to this resource, this means we fail to provide CORS headers
-# either way, the headers will be the same on this request.
+# Subsequent request with Origin header will have the same CORS response headers.
+# If the previous request without Origin header was first to this resource, this
+# means we fail to provide CORS headers.
+# Either way, the headers will be the same on this request.
 curl -o /dev/null -D - \
 	-H 'accept: application/json, text/plain, */*' \
 	-H 'origin: https://example.com' \
@@ -196,8 +195,8 @@ accept-ranges: bytes
 server: AmazonS3
 x-cache: RefreshHit from cloudfront
 
-# With the CloudFront settings updated to use the Origin header as part of the cache key, this same request
-# will include CORS headers in the response as shown here
+# With the CloudFront settings updated to use the Origin header as part of the
+# cache key, this same request will include CORS headers in the response:
 curl -o /dev/null -D - \
 	-H 'accept: application/json, text/plain, */*' \
 	-H 'origin: https://example.com' \
