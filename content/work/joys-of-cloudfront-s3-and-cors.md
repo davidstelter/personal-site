@@ -220,10 +220,7 @@ x-cache: RefreshHit from cloudfront
 
 ## References
 
-https://forums.aws.amazon.com/thread.jspa?threadID=156134
-
-https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html#header-caching-web-cors
-
-https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
-
-https://fetch.spec.whatwg.org/#http-access-control-request-headers
+<https://forums.aws.amazon.com/thread.jspa?threadID=156134>
+<https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html#header-caching-web-cors>
+<https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS>
+<https://fetch.spec.whatwg.org/#http-access-control-request-headers>
