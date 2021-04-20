@@ -63,7 +63,7 @@ First up, a CORS-enabled client asks for the resource with an Origin header and 
 Then a non-CORS-enabled client asks for the same resource without an Origin header, and this is a cache hit in CloudFront, so the same response
 which includes CORS headers is sent to the second client. It doesn't care about these headers and just ignores them, this causes no problems
 for either client, and everything is fine.
-{%- mermaid() -%}
+{% mermaid() %}
 sequenceDiagram
 participant P as Publisher
 participant S3
@@ -95,7 +95,7 @@ loop Check Cache
 end
 CF-->>C2: RESP Object (w/CORS)
 Note right of C2: Happy client, ignores<br/>CORS headers.
-{%- end -%}
+{% end %}
 
 But if the order of requests is changed and the non-CORS request occurs first, things are very different. In this case, the non-CORS client still
 has everything it needs, but the client expecting CORS doesn't get back the headers it needs and the user agent will refuse to load the content.
